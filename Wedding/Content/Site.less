@@ -1,0 +1,51 @@
+﻿@import "Colours.less";
+
+// Resets
+body, div, header, footer, h1, h2, h3, p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+// Web Fonts - hide until loaded to stop flicker
+.wf-loading {
+	visibility: hidden;
+}
+
+// Styles
+html {
+	height: 100%;
+
+	body {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		font: 14px Lobster, sans-serif;
+		background: #9dc2c3;
+		color: white;
+		align-items: center;
+
+		header {
+			padding: 1em;
+
+			h1 {
+				font-size: 300%;
+			}
+
+			h2 {
+				font-size: 150%;
+			}
+		}
+
+		#content {
+			flex-grow: 1;
+		}
+
+		footer {
+			padding: 0.5em;
+		}
+	}
+}

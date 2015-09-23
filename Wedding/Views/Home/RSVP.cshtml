@@ -1,0 +1,45 @@
+﻿@model Wedding.Models.RSVP
+
+@{
+	ViewBag.Title = "RSVP";
+}
+
+@section Head {
+	<link href="~/Content/rsvp.css" rel="stylesheet" />
+}
+
+<form action="Thanks" method="post">
+	<table>
+		<tr>
+			<td>@Html.LabelFor(a => a.Names)</td>
+			<td>@Html.TextBoxFor(a => a.Names)</td>
+		</tr>
+		<tr>
+			<td>@Html.LabelFor(a => a.Email)</td>
+			<td>@Html.TextBoxFor(a => a.Email)</td>
+		</tr>
+		<tr>
+			<td>@Html.LabelFor(a => a.Available)</td>
+			<td>
+				@Html.RadioButtonFor(a => a.Available, true, new { @id = "available-yes", @class = "yes", @checked = true })<label for="available-yes" class="radio">Yes</label>
+				@Html.RadioButtonFor(a => a.Available, false, new { @id = "available-no", @class= "no" })<label for="available-no" class="radio">No</label>
+			</td>
+		</tr>
+		<tr>
+			<td>@Html.LabelFor(a => a.Comments)</td>
+			<td>@Html.TextBoxFor(a => a.Comments)</td>
+		</tr>
+		<tr>
+			<td />
+			<td>
+				<input type="submit" value="Submit" />
+			</td>
+		</tr>
+		<tr>
+			<td />
+			<td>
+				<p>Further details of the weekend, invites and formal RSVPs will all appear here on our website. We'll drop you an email whenever we add more content.</p>
+			</td>
+		</tr>
+	</table>
+</form>

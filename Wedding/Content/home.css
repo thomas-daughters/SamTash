@@ -1,0 +1,35 @@
+﻿svg {
+	display: block;
+	margin: auto;
+	text-rendering: optimizeLegibility;
+	shape-rendering: crispEdges;
+	fill: none;
+	overflow: visible;
+}
+
+.land {
+	fill: white;
+}
+
+.boundary {
+	stroke: white;
+	stroke-width: 2px;
+}
+
+.city {
+	fill: #555;
+}
+
+	.city.bordeaux {
+		fill: red;
+	}
+
+.connection {
+	stroke: #555;
+	stroke-dasharray: 3, 1;
+}
+
+.label {
+	fill: white;
+	text-anchor: end;
+}

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<base href="~/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Sam & Tash | @ViewBag.Title</title>
+	<link href="~/Content/site.css" rel="stylesheet" />
+	<script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+	<script>WebFont.load({google:{families:["Lobster"]}});</script>
+	@RenderSection("Head", false)
+</head>
+<body>
+	<header>
+		<h1>Sam & Tash</h1>
+		<h2>30th April - 2nd May 2016</h2>
+	</header>
+
+	<div id="content">
+		@RenderBody()
+	</div>
+
+	<footer>www.SamTash.com</footer>
+</body>
+</html>

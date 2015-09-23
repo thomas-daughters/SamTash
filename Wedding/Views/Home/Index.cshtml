@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@section Head {
+	<link href="~/Content/home.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+	<script src="~/Scripts/superformula.js"></script>
+}
+
+<script>
+	var width = 700,
+		height = 450,
+		radius = 5;
+
+	var projection = d3.geo.mercator()
+		.scale((width + 1) / 2 / Math.PI)
+		.translate([width / 2, height / 1.35])
+		.rotate([-12, 0])
+		.precision(.1);
+
+	var path = d3.geo.path()
+		.projection(projection);
+
+	var diag = d3.svg.diagonal()
+		.source(function (d) { return { x: d.source.geometry.coordinates[0], y: d.source.geometry.coordinates[1] }; })
+		.target(function (d) { return { x: d.target.geometry.coordinates[0], y: d.target.geometry.coordinates[1] }; })
+		.projection(function (d) { return projection([d.x, d.y]); });
+
+	var shape = d3.superformula()
+		.type(function (d) { return d.properties.name == "Bordeaux" ? "heart" : "roundedStar"; })
+		.size(radius * 20);
+
+	var svg = d3.select("#content")
+	  .append("svg")
+		.attr("width", width)
+		.attr("height", height)
+	  .append("a")
+		.attr("xlink:href", "RSVP");
+
+	d3.json("/Content/world.json", function (e, d) {
+		if (e) throw e;
+
+		var countries = topojson.feature(d, d.objects.countries).features;
+		var boundaries = topojson.mesh(d, d.objects.countries, function (a, b) { return a !== b; });
+
+		var cities = topojson.feature(d, d.objects.cities).features;
+		var london, johannesburg, bordeaux;
+		cities.forEach(function (d) {
+			if (d.properties.name == "London") london = d;
+			else if (d.properties.name == "Johannesburg") johannesburg = d;
+			else if (d.properties.name == "Bordeaux") bordeaux = d;
+		});
+
+		var connections = [{ source: london, target: johannesburg }];
+
+		svg.selectAll(".land")
+			.data(countries)
+		  .enter().append("path")
+			.attr("class", function (d) { return "land " + d.id; })
+			.attr("d", path);
+
+		svg.append("path")
+			.datum(boundaries)
+			.attr("class", "boundary")
+			.attr("d", path);
+
+		svg.selectAll(".connection")
+			.data(connections)
+		  .enter().append("path")
+			.attr("class", "connection")
+			.attr("d", diag);
+
+		svg.selectAll(".city")
+			.data([london, johannesburg, bordeaux])
+		  .enter().append("path")
+			.attr("class", function (d) { return "city " + d.properties.name.toLowerCase(); })
+			.attr("transform", function (d) { return "translate(" + projection(d.geometry.coordinates) + ") rotate(" + (d.properties.name == "London" ? "90" : "-90") + ")"; })
+			.attr("d", shape);
+
+		transition(1);
+		function transition(direction) {
+			d3.select(".city.bordeaux")
+				.transition()
+				.duration(5000)
+				.ease("linear")
+				.attrTween("transform", translateAlong(d3.select(".connection").node(), direction))
+				.each("end", function () { return transition(-direction); });
+		}
+
+		// Returns an attrTween for translating along the specified path element.
+		function translateAlong(path, direction) {
+			var l = path.getTotalLength();
+			return function (d, i, a) {
+				return function (t) {
+					var tt = direction == 1 ? t : 1 - t;
+					var p = path.getPointAtLength(tt * l);
+					var pp = path.getPointAtLength((tt + 0.01) * l);
+					var theta = 360 * Math.atan((pp.y - p.y) / (pp.x - p.x)) / 2 / Math.PI;
+					return "translate(" + p.x + "," + p.y + ")rotate(" + theta + ")";
+				};
+			};
+		}
+	});
+</script>

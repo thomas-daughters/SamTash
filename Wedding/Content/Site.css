@@ -1,0 +1,44 @@
+﻿body,
+div,
+header,
+footer,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.wf-loading {
+  visibility: hidden;
+}
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font: 14px Lobster, sans-serif;
+  background: #9dc2c3;
+  color: white;
+  align-items: center;
+}
+html body header {
+  padding: 1em;
+}
+html body header h1 {
+  font-size: 300%;
+}
+html body header h2 {
+  font-size: 150%;
+}
+html body #content {
+  flex-grow: 1;
+}
+html body footer {
+  padding: 0.5em;
+}
