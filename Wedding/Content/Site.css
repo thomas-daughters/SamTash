@@ -38,6 +38,18 @@ html body header h1 {
 html body header h2 {
   font-size: 150%;
 }
+html body nav {
+  width: 960px;
+}
+html body nav ul {
+  display: flex;
+  width: 100%;
+}
+html body nav ul li {
+  list-style: none;
+  flex-grow: 1;
+  text-align: center;
+}
 html body #content {
   flex-grow: 1;
 }
