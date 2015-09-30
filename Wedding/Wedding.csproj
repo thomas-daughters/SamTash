@@ -147,6 +147,9 @@
     <Content Include="Content\Location.css">
       <DependentUpon>Location.less</DependentUpon>
     </Content>
+    <Content Include="Content\Location.min.css">
+      <DependentUpon>Location.css</DependentUpon>
+    </Content>
     <Content Include="Content\rsvp.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\Site.css">

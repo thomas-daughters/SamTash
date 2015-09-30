@@ -1,1 +1,17 @@
-﻿
+﻿#content h2 {
+  margin: .5em 0;
+}
+#content .map {
+  border: thin solid white;
+}
+#content .row,
+#content .column {
+  display: flex;
+  width: 100%;
+}
+#content .column {
+  flex-direction: column;
+}
+#content .column.half {
+  width: 50%;
+}
