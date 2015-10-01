@@ -17,6 +17,14 @@ namespace Wedding.Controllers {
 			return View();
 		}
 
+		public ActionResult Accommodation() {
+			return View();
+		}
+
+		public ActionResult Photos() {
+			return View("Index");
+		}
+
 		[HttpPost]
 		public ActionResult Thanks(RSVP rsvp) {
 			string body = "Names: " + rsvp.Names + Environment.NewLine

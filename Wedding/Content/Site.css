@@ -2,6 +2,8 @@
 div,
 header,
 footer,
+ul,
+li,
 h1,
 h2,
 h3,
@@ -12,6 +14,7 @@ p {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 .wf-loading {
   visibility: hidden;
@@ -39,7 +42,10 @@ html body header h2 {
   font-size: 150%;
 }
 html body nav {
-  width: 960px;
+  width: 700px;
+  border: solid white;
+  border-width: thin 0;
+  padding: 0 .5em;
 }
 html body nav ul {
   display: flex;
@@ -49,9 +55,20 @@ html body nav ul li {
   list-style: none;
   flex-grow: 1;
   text-align: center;
+  font-size: 120%;
+}
+html body nav ul li a {
+  display: block;
+  padding: 0.5em;
+}
+html body nav ul li a:hover {
+  background: white;
+  color: #9cc1c2;
 }
 html body #content {
+  width: 700px;
   flex-grow: 1;
+  padding: 1em;
 }
 html body footer {
   padding: 0.5em;

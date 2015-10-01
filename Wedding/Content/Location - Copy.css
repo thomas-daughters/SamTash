@@ -4,12 +4,7 @@
 #content h3 {
   font-weight: normal;
 }
-#content address {
-  margin-top: 6em;
-  font-size: 110%;
-  font-style: normal;
-}
-#content iframe.map {
+#content .map {
   border: thin solid white;
 }
 #content .row,
@@ -22,8 +17,4 @@
 }
 #content .column.half {
   width: 50%;
-}
-#content .column.map {
-  width: 500px;
-  flex-shrink: 0;
 }

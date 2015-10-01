@@ -149,6 +149,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Location - Copy.css">
+      <DependentUpon>Accommodation.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Location - Copy.min.css">
+      <DependentUpon>Location - Copy.css</DependentUpon>
+    </Content>
     <Content Include="Content\Location.css">
       <DependentUpon>Location.less</DependentUpon>
     </Content>
@@ -189,9 +195,11 @@
     </Content>
     <Content Include="Content\Colours.less" />
     <Content Include="Content\Location.less" />
+    <Content Include="Content\Accommodation.less" />
     <None Include="Properties\PublishProfiles\samtash.com - Web Deploy.pubxml" />
     <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Views\Home\Location.cshtml" />
+    <Content Include="Views\Home\Accommodation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
