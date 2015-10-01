@@ -1,6 +1,9 @@
 ﻿#content h2 {
   margin: .5em 0;
 }
+#content h3 {
+  font-weight: normal;
+}
 #content .map {
   border: thin solid white;
 }
