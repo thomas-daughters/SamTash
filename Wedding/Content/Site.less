@@ -24,10 +24,14 @@ html {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		font: 14px Lobster, sans-serif;
+		font: 14px Calibri, sans-serif;
 		background: #9dc2c3;
 		color: white;
 		align-items: center;
+
+		header, nav, footer {
+			font: 14px Lobster, sans-serif;
+		}
 
 		header {
 			padding: 1em;
@@ -61,6 +65,8 @@ html {
 					a {
 						display: block;
 						padding: 0.5em;
+						background: transparent;
+						transition: ease 0.5s;
 
 						&:hover {
 							background: white;
@@ -74,7 +80,7 @@ html {
 		#content {
 			width: 700px;
 			flex-grow: 1;
-			padding: 1em;
+			padding: 0 1em;
 		}
 
 		footer {

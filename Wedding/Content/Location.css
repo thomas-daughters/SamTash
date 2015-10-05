@@ -5,23 +5,27 @@
   font-weight: normal;
 }
 #content address {
-  margin-top: 6em;
+  margin: 1em 0;
   font-size: 110%;
   font-style: normal;
+  color: brown;
 }
 #content iframe.map {
   border: thin solid white;
 }
-#content .row,
-#content .column {
+#content .row {
   display: flex;
-  width: 100%;
+  margin-top: 1em;
 }
 #content .column {
   flex-direction: column;
+  width: 100%;
 }
-#content .column.half {
-  width: 50%;
+#content .column.nowrap {
+  white-space: nowrap;
+  width: auto;
+  margin-right: 1em;
+  color: brown;
 }
 #content .column.map {
   width: 500px;

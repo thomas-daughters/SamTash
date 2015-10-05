@@ -26,10 +26,15 @@ html body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  font: 14px Lobster, sans-serif;
+  font: 14px Calibri, sans-serif;
   background: #9dc2c3;
   color: white;
   align-items: center;
+}
+html body header,
+html body nav,
+html body footer {
+  font: 14px Lobster, sans-serif;
 }
 html body header {
   padding: 1em;
@@ -60,6 +65,8 @@ html body nav ul li {
 html body nav ul li a {
   display: block;
   padding: 0.5em;
+  background: transparent;
+  transition: ease 0.5s;
 }
 html body nav ul li a:hover {
   background: white;
@@ -68,7 +75,7 @@ html body nav ul li a:hover {
 html body #content {
   width: 700px;
   flex-grow: 1;
-  padding: 1em;
+  padding: 0 1em;
 }
 html body footer {
   padding: 0.5em;
