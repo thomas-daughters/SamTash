@@ -6,5 +6,21 @@
   {
     "outputFile": "Content/Location.css",
     "inputFile": "Content/Location.less"
+  },
+  {
+    "outputFile": "Content/Accommodation.css",
+    "inputFile": "Content/Accommodation.less"
+  },
+  {
+    "outputFile": "Content/RSVP.css",
+    "inputFile": "Content/RSVP.less"
+  },
+  {
+    "outputFile": "Content/Home.css",
+    "inputFile": "Content/Home.less"
+  },
+  {
+    "outputFile": "Content/Photos.css",
+    "inputFile": "Content/Photos.less"
   }
 ]

@@ -1,47 +1,24 @@
 ﻿@import "Colours.less";
 
 #content {
-	h2 {
-		margin: .5em 0;
-	}
-
-	h3 {
-		font-weight: normal;
-	}
-
-	p {
+	.row h2 {
+		margin-top: 0;
 	}
 
 	address {
 		margin: 1em 0;
 		font-size: 110%;
 		font-style: normal;
-		color: brown;
+		color: gold;
+		text-shadow: black 0 0 1px;
 	}
 
-	iframe.map {
-		border: thin solid white;
-	}
+	#map {
+		flex-shrink: 0;
+		width: 500px;
 
-	.row {
-		display: flex;
-		margin-top: 1em;
-	}
-
-	.column {
-		flex-direction: column;
-		width: 100%;
-
-		&.nowrap {
-			white-space: nowrap;
-			width: auto;
-			margin-right: 1em;
-			color: brown;
-		}
-
-		&.map {
-			width: 500px;
-			flex-shrink: 0;
+		iframe {
+			border: thin solid white;
 		}
 	}
 }

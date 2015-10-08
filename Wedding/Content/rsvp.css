@@ -1,100 +1,25 @@
-﻿#content {
-	background: white;
-	text-align: center;
-	border-radius: 1em;
-	box-shadow: inset 0 0 5px #555;
-	padding: 0.5em;
+﻿#content input {
+  border-radius: 4px 0 0 4px;
+  padding: .5em .75em;
+  border: 1px solid grey;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px inset;
 }
-
-table {
-	width: 100%;
-	text-align: left;
-	border-collapse: collapse;
+#content input:focus {
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 8px inset;
 }
-
-td {
-	padding: 0.5em;
+#content button {
+  border-radius: 0 4px 4px 0;
+  padding: .5em .75em;
+  margin-left: -1px;
+  border: 1px solid grey;
+  background: #eee;
 }
-
-	td:first-of-type {
-		width: 30%;
-	}
-
-p {
-	display: inline-block;
-	color: #888;
+#content button:hover {
+  background: #ddd;
+  cursor: pointer;
 }
-
-label {
-	color: #888;
+#content button:active {
+  background: #ccc;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px inset;
 }
-
-input, label {
-	font-size: 150%;
-	height: 1.5em;
-	line-height: 1.5em;
-	border-radius: 0.2em;
-}
-
-	input[type=text], input[type=email] {
-		width: 100%;
-		padding-left: 0.3em;
-		background: #9dc2c3;
-		box-shadow: inset 0 0 5px #555;
-	}
-
-	input[type=radio] {
-		visibility: hidden;
-		position: absolute;
-	}
-
-	input[type=submit] {
-		padding: 0 0.3em;
-		color: white;
-		background: linear-gradient(#CCC, #888);
-		border: 1px solid;
-		border-color: #999 #777 #666;
-		box-shadow: inset 0 1px 0 0 #DDD, 0 1px 2px 0 #BBB;
-		text-shadow: 0 -1px 1px #888;
-	}
-
-		input[type=submit]:hover {
-			background: linear-gradient(#666, #AAA);
-			border-color: #666 #444 #222;
-			box-shadow: inset 0 1px 0 0 #AAA;
-			cursor: pointer;
-			text-shadow: 0 -1px 1px #666;
-		}
-
-		input[type=submit]:active {
-			background: #AAA;
-			border-color: #444 #444 #222;
-			box-shadow: inset 0 0 6px 3px #666, 0 1px 0 0 #FFF;
-			text-shadow: 0 -1px 1px #666;
-		}
-
-	input + label.radio {
-		display: inline-block;
-		text-align: center;
-		width: 2em;
-		cursor: pointer;
-		background: #AAA;
-		border: 1px solid #777;
-		color: white;
-		box-shadow: #777 0 0 5px 0 inset;
-	}
-
-	input.yes:checked + label.radio {
-		background: #34c734;
-	}
-
-	input.no:checked + label.radio {
-		background: #e63939;
-	}
-
-	input[type=text]:focus, input[type=email]:focus {
-		box-shadow: #555 0 0 5px inset, #34c734 0 0 10px inset;
-	}
-
-	input.input-validation-error {
-	}

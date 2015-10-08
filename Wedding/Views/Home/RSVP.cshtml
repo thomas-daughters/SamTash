@@ -5,41 +5,16 @@
 }
 
 @section Head {
-	<link href="~/Content/rsvp.css" rel="stylesheet" />
+	<link href="~/Content/RSVP.min.css" rel="stylesheet" />
 }
 
+<h2>RSVP</h2>
+<p>Thanks to those who already responded to our save the date. This is a formal invite, so please complete this new form once you're sure you can make it.<p>
+<p>All guests are welcome to bring a plus one, expected to be your signicant partner. Children are also welcome.</p>
+
 <form action="Thanks" method="post">
-	<table>
-		<tr>
-			<td>@Html.LabelFor(a => a.Names)</td>
-			<td>@Html.TextBoxFor(a => a.Names)</td>
-		</tr>
-		<tr>
-			<td>@Html.LabelFor(a => a.Email)</td>
-			<td>@Html.TextBoxFor(a => a.Email)</td>
-		</tr>
-		<tr>
-			<td>@Html.LabelFor(a => a.Available)</td>
-			<td>
-				@Html.RadioButtonFor(a => a.Available, true, new { @id = "available-yes", @class = "yes", @checked = true })<label for="available-yes" class="radio">Yes</label>
-				@Html.RadioButtonFor(a => a.Available, false, new { @id = "available-no", @class= "no" })<label for="available-no" class="radio">No</label>
-			</td>
-		</tr>
-		<tr>
-			<td>@Html.LabelFor(a => a.Comments)</td>
-			<td>@Html.TextBoxFor(a => a.Comments)</td>
-		</tr>
-		<tr>
-			<td />
-			<td>
-				<input type="submit" value="Submit" />
-			</td>
-		</tr>
-		<tr>
-			<td />
-			<td>
-				<p>Further details of the weekend, invites and formal RSVPs will all appear here on our website. We'll drop you an email whenever we add more content.</p>
-			</td>
-		</tr>
-	</table>
+	<div class="row">
+		@Html.TextBoxFor(a => a.Names, new { @autocomplete = false, @placeholder = "Guest Names in Full" })
+		<button class="thin" type="submit">Submit</button>
+	</div>
 </form>

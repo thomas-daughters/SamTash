@@ -1,33 +1,17 @@
-﻿#content h2 {
-  margin: .5em 0;
-}
-#content h3 {
-  font-weight: normal;
+﻿#content .row h2 {
+  margin-top: 0;
 }
 #content address {
   margin: 1em 0;
   font-size: 110%;
   font-style: normal;
-  color: brown;
+  color: gold;
+  text-shadow: black 0 0 1px;
 }
-#content iframe.map {
-  border: thin solid white;
-}
-#content .row {
-  display: flex;
-  margin-top: 1em;
-}
-#content .column {
-  flex-direction: column;
-  width: 100%;
-}
-#content .column.nowrap {
-  white-space: nowrap;
-  width: auto;
-  margin-right: 1em;
-  color: brown;
-}
-#content .column.map {
-  width: 500px;
+#content #map {
   flex-shrink: 0;
+  width: 500px;
+}
+#content #map iframe {
+  border: thin solid white;
 }

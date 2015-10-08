@@ -19,11 +19,7 @@ a {
 .wf-loading {
   visibility: hidden;
 }
-html {
-  height: 100%;
-}
-html body {
-  height: 100%;
+body {
   display: flex;
   flex-direction: column;
   font: 14px Calibri, sans-serif;
@@ -31,52 +27,79 @@ html body {
   color: white;
   align-items: center;
 }
-html body header,
-html body nav,
-html body footer {
-  font: 14px Lobster, sans-serif;
+body header,
+body nav,
+body footer,
+body h2 {
+  font-family: Lobster, sans-serif;
+  font-weight: normal;
 }
-html body header {
+body header {
   padding: 1em;
-  text-align: center;
 }
-html body header h1 {
+body header h1 {
   font-size: 300%;
 }
-html body header h2 {
+body header h2 {
   font-size: 150%;
 }
-html body nav {
+body nav {
   width: 700px;
   border: solid white;
   border-width: thin 0;
   padding: 0 .5em;
 }
-html body nav ul {
+body nav ul {
   display: flex;
   width: 100%;
 }
-html body nav ul li {
+body nav ul li {
   list-style: none;
   flex-grow: 1;
   text-align: center;
   font-size: 120%;
 }
-html body nav ul li a {
+body nav ul li a {
   display: block;
   padding: 0.5em;
   background: transparent;
   transition: ease 0.5s;
 }
-html body nav ul li a:hover {
+body nav ul li a:hover {
   background: white;
   color: #9cc1c2;
 }
-html body #content {
+body #content {
   width: 700px;
   flex-grow: 1;
   padding: 0 1em;
 }
-html body footer {
+body #content h2 {
+  margin: .5em 0 0;
+}
+body #content p {
+  margin: .25em 0 1em;
+}
+body #content p a {
+  color: gold;
+  text-shadow: black 0 0 1px;
+}
+body #content .list p {
+  margin: .25em 0 0;
+}
+body #content .row {
+  display: flex;
+  margin-top: 1em;
+}
+body #content .row > div {
+  width: 100%;
+}
+body #content .row > div.thin {
+  width: auto;
+  margin-right: 1em;
+  flex-shrink: 0;
+}
+body footer {
+  margin-top: 1em;
   padding: 0.5em;
 }

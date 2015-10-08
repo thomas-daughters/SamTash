@@ -149,11 +149,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Location - Copy.css">
+    <Content Include="Content\Accommodation.css">
       <DependentUpon>Accommodation.less</DependentUpon>
     </Content>
-    <Content Include="Content\Location - Copy.min.css">
-      <DependentUpon>Location - Copy.css</DependentUpon>
+    <Content Include="Content\Accommodation.min.css">
+      <DependentUpon>Accommodation.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home.css">
+      <DependentUpon>Home.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Home.min.css">
+      <DependentUpon>Home.css</DependentUpon>
     </Content>
     <Content Include="Content\Location.css">
       <DependentUpon>Location.less</DependentUpon>
@@ -161,8 +167,18 @@
     <Content Include="Content\Location.min.css">
       <DependentUpon>Location.css</DependentUpon>
     </Content>
-    <Content Include="Content\rsvp.css" />
-    <Content Include="Content\home.css" />
+    <Content Include="Content\Photos.css">
+      <DependentUpon>Photos.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Photos.min.css">
+      <DependentUpon>Photos.css</DependentUpon>
+    </Content>
+    <Content Include="Content\RSVP.css">
+      <DependentUpon>RSVP.less</DependentUpon>
+    </Content>
+    <Content Include="Content\RSVP.min.css">
+      <DependentUpon>RSVP.css</DependentUpon>
+    </Content>
     <Content Include="Content\Site.css">
       <DependentUpon>Site.less</DependentUpon>
     </Content>
@@ -171,7 +187,7 @@
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\world.json" />
+    <Content Include="Content\World.json" />
     <Content Include="Scripts\superformula.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -185,7 +201,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\RSVP.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.less" />
@@ -196,13 +212,20 @@
     <Content Include="Content\Colours.less" />
     <Content Include="Content\Location.less" />
     <Content Include="Content\Accommodation.less" />
+    <Content Include="Content\RSVP.less" />
+    <Content Include="Content\Home.less" />
+    <Content Include="Content\Photos.less" />
     <None Include="Properties\PublishProfiles\samtash.com - Web Deploy.pubxml" />
     <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Views\Home\Location.cshtml" />
     <Content Include="Views\Home\Accommodation.cshtml" />
+    <Content Include="Views\Home\Photos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Photos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
