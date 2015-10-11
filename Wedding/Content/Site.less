@@ -19,6 +19,8 @@ a {
 // Styles
 body {
 	display: flex;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
 	flex-direction: column;
 	font: 14px Calibri, sans-serif;
 	background: #9dc2c3;
@@ -32,6 +34,7 @@ body {
 
 	header {
 		padding: 1em;
+		flex-shrink: 0;
 
 		h1 {
 			font-size: 300%;
@@ -44,6 +47,7 @@ body {
 
 	nav {
 		width: 700px;
+		flex-shrink: 0;
 		border: solid white;
 		border-width: thin 0;
 		padding: 0 .5em;
@@ -62,6 +66,9 @@ body {
 					display: block;
 					padding: 0.5em;
 					background: transparent;
+					-moz-transition: ease 0.5s;
+					-o-transition: ease 0.5s;
+					-webkit-transition: ease 0.5s;
 					transition: ease 0.5s;
 
 					&:hover {
@@ -112,7 +119,8 @@ body {
 	}
 
 	footer {
-		margin-top: 1em;
-		padding: 0.5em;
+		flex-shrink: 0;
+		margin-top: .5em;
+		padding: .5em;
 	}
 }

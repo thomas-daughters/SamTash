@@ -1,29 +1,34 @@
-﻿svg {
-  display: block;
-  margin: auto;
+﻿html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+}
+html body #content svg {
+  margin-top: .5em;
   text-rendering: optimizeLegibility;
   shape-rendering: crispEdges;
   fill: none;
   overflow: visible;
 }
-.land {
+html body #content .land {
   fill: white;
 }
-.boundary {
+html body #content .boundary {
   stroke: white;
   stroke-width: 2px;
 }
-.city {
+html body #content .city {
   fill: #555;
 }
-.city.bordeaux {
+html body #content .city.bordeaux {
   fill: red;
 }
-.connection {
+html body #content .connection {
   stroke: #555;
   stroke-dasharray: 3, 1;
 }
-.label {
+html body #content .label {
   fill: white;
   text-anchor: end;
 }

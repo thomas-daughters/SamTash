@@ -14,6 +14,7 @@
   margin-left: -1px;
   border: 1px solid grey;
   background: #eee;
+  flex-shrink: 0;
 }
 #content button:hover {
   background: #ddd;
