@@ -1,20 +1,19 @@
-﻿body,
-div,
-header,
-footer,
-ul,
-li,
-h1,
-h2,
-h3,
-h4,
-p {
+﻿* {
   margin: 0;
   padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
 }
 .wf-loading {
   visibility: hidden;
@@ -29,21 +28,21 @@ body {
   color: white;
   align-items: center;
 }
-body header,
 body nav,
 body footer,
+body h1,
 body h2 {
   font-family: Lobster, sans-serif;
   font-weight: normal;
 }
-body header {
+body > header {
   padding: 1em;
   flex-shrink: 0;
 }
-body header h1 {
+body > header h1 {
   font-size: 300%;
 }
-body header h2 {
+body > header h2 {
   font-size: 150%;
 }
 body nav {
@@ -88,8 +87,7 @@ body #content p {
   margin: .25em 0 1em;
 }
 body #content p a {
-  color: gold;
-  text-shadow: black 0 0 1px;
+  text-shadow: orange 0 0 3px;
 }
 body #content .list p {
   margin: .25em 0 0;
@@ -106,7 +104,7 @@ body #content .row > div.thin {
   margin-right: 1em;
   flex-shrink: 0;
 }
-body footer {
+body > footer {
   flex-shrink: 0;
   margin-top: .5em;
   padding: .5em;

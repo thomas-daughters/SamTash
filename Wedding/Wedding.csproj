@@ -143,8 +143,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Guest.cs" />
+    <Compile Include="Models\Airline.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\RSVP.cs" />
+    <Compile Include="Models\Airport.cs" />
+    <Compile Include="Models\Flight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +168,12 @@
     </Content>
     <Content Include="Content\Location.min.css">
       <DependentUpon>Location.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Logistics.css">
+      <DependentUpon>Logistics.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Logistics.min.css">
+      <DependentUpon>Logistics.css</DependentUpon>
     </Content>
     <Content Include="Content\Photos.css">
       <DependentUpon>Photos.less</DependentUpon>
@@ -238,11 +247,12 @@
     <Content Include="Content\RSVP.less" />
     <Content Include="Content\Home.less" />
     <Content Include="Content\Photos.less" />
+    <Content Include="Content\Logistics.less" />
     <None Include="Properties\PublishProfiles\samtash.com - Web Deploy.pubxml" />
-    <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Views\Home\Location.cshtml" />
     <Content Include="Views\Home\Accommodation.cshtml" />
     <Content Include="Views\Home\Photos.cshtml" />
+    <Content Include="Views\Home\Logistics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

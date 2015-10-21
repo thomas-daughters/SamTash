@@ -11,24 +11,24 @@ html body #content svg {
   fill: none;
   overflow: visible;
 }
-html body #content .land {
+html body #content svg .land {
   fill: white;
 }
-html body #content .boundary {
+html body #content svg .boundary {
   stroke: white;
   stroke-width: 2px;
 }
-html body #content .city {
+html body #content svg .city {
   fill: #555;
 }
-html body #content .city.bordeaux {
+html body #content svg .city.bordeaux {
   fill: red;
 }
-html body #content .connection {
+html body #content svg .connection {
   stroke: #555;
   stroke-dasharray: 3, 1;
 }
-html body #content .label {
+html body #content svg .label {
   fill: white;
   text-anchor: end;
 }

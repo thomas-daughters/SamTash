@@ -1,0 +1,115 @@
+﻿@using Wedding.Models
+@model IEnumerable<Guest>
+
+@{
+	ViewBag.Title = "Logistics";
+}
+
+@section Head {
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="~/Content/Logistics.min.css" rel="stylesheet" />
+}
+
+<h2>Logistics</h2>
+<p>Please add your flight details here once you've booked them. This will help us know what time to expect people and to help with transport arrangements from the airport to the venue. You won't appear here until you've @Html.ActionLink("RSVP'd", "RSVP").</p>
+<p>Flying a different route? Getting there another way? Please drop us an <a href="mailto:Sam and Tash's Wedding<wedding@samtash.com>">email</a> to let us know the details.</p>
+
+@if (!String.IsNullOrEmpty(ViewBag.Status)) {
+	<div class="@ViewBag.Class">
+		<p>@ViewBag.Status</p>
+		<button class="close" type="button" onclick="closeStatus()"><i class="fa fa-remove"></i></button>
+	</div>
+}
+<div class="guests">
+	@foreach (Guest guest in Model.ToList()) {
+		using (Html.BeginForm("UpdateFlights", "Home")) {
+			@Html.Hidden("ID", guest.ID)
+			@Html.Hidden("Email", null, new { @class = "email" })
+			<header>
+				<h3>@guest.Names</h3>
+				<button class="edit" type="button"><i class="fa fa-pencil"></i></button>
+				<button class="cancel" type="button"><i class="fa fa-remove"></i></button>
+				<button class="save" type="button"><i class="fa fa-check"></i></button>
+			</header>
+			<section>
+				<h4>Outbound</h4>
+				<p class="text">
+					@if (guest.DepartID > 0) {
+						@: @guest.Depart.Origin.Name to @guest.Depart.Destination.Name (@guest.Depart.Airline.Name) @guest.Depart.Depart
+					} else {
+						@: TBC
+					}
+				</p>
+				@Html.DropDownList("DepartID", new SelectList(ViewBag.OutboundFlights, "ID", "Text", guest.DepartID), new { @class = "list" })
+			</section>
+			<section>
+				<h4>Return</h4>
+				<p class="text">
+					@if (guest.ReturnID > 0) {
+						@: @guest.Return.Origin.Name to @guest.Return.Destination.Name (@guest.Return.Airline.Name) @guest.Return.Depart
+					} else {
+						@: TBC
+					}
+				</p>
+				@Html.DropDownList("ReturnID", new SelectList(ViewBag.ReturnFlights, "ID", "Text", guest.ReturnID), new { @class = "list" })
+			</section>
+		}
+	}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script>
+	d3.selectAll(".edit")
+		.on("click", function () {
+			// Swap edit button for save button
+			d3.select(this)
+				.style("display", "none");
+
+			d3.select(this.parentNode).select(".save")
+				.style("display", "block");
+
+			d3.select(this.parentNode).select(".cancel")
+				.style("display", "block");
+
+			// Swap text for dropdown list
+			d3.select(this.parentNode.parentNode).selectAll(".text")
+				.style("display", "none");
+
+			d3.select(this.parentNode.parentNode).selectAll(".list")
+				.style("display", "block");
+		});
+
+	d3.selectAll(".cancel")
+		.on("click", function () {
+			// Swap edit button for save button
+			d3.select(this)
+				.style("display", "none");
+
+			d3.select(this.parentNode).select(".save")
+				.style("display", "none");
+
+			d3.select(this.parentNode).select(".edit")
+				.style("display", "block");
+
+			// Swap text for dropdown list
+			d3.select(this.parentNode.parentNode).selectAll(".text")
+				.style("display", "block");
+
+			d3.select(this.parentNode.parentNode).selectAll(".list")
+				.style("display", "none");
+		});
+
+	d3.selectAll(".save")
+		.on("click", function () {
+			// Capture email address for validation
+			var email = prompt("Please enter your email for security. This must match the email provided on your RSVP.", "Email");
+
+			// Update form field and submit
+			d3.select(this.parentNode.parentNode).select(".email").property("value", email);
+			d3.select(this.parentNode.parentNode).node().submit();
+		});
+
+	function closeStatus() {
+		d3.select(".status").remove();
+	}
+</script>
