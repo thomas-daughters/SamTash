@@ -63,6 +63,12 @@ namespace Wedding.Controllers {
 
 					context.SaveChanges();
 					TempData["Status"] = "Saved";
+
+					// Send email
+					string body = guest.Names + " entered flight details.";
+					MailMessage message = new MailMessage("wedding@samtash.com", "wedding@samtash.com", "Wedding RSVP", body);
+					SmtpClient client = new SmtpClient("relay-hosting.secureserver.net", 25);
+					client.Send(message);
 				} catch (Exception e) {
 					TempData["Status"] = "Failed to save: " + e.Message;
 				}
