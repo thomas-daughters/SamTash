@@ -65,7 +65,7 @@ namespace Wedding.Controllers {
 					TempData["Status"] = "Saved";
 
 					// Send email
-					string body = guest.Names + " entered flight details.";
+					string body = original.Names + " entered flight details.";
 					MailMessage message = new MailMessage("wedding@samtash.com", "wedding@samtash.com", "Wedding RSVP", body);
 					SmtpClient client = new SmtpClient("relay-hosting.secureserver.net", 25);
 					client.Send(message);
