@@ -15,7 +15,7 @@
 @using (Html.BeginForm("Thanks", "Home")) {
 	<div class="row">
 		@Html.TextBoxFor(a => a.Names, new { @autocomplete = false, @placeholder = "Guest Names in Full" })
-		@Html.TextBoxFor(a => a.Email, new { @autocomplete = false, @placeholder = "Email" })
+		@Html.TextBoxFor(a => a.Email, new { @autocomplete = false, @placeholder = "Email", @type="email" })
 		<button class="thin" type="submit">Submit</button>
 	</div>
 }
