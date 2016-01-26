@@ -37,7 +37,7 @@
 					@if (guest.DepartID > 0) {
 						@: @guest.Depart.Origin.Name to @guest.Depart.Destination.Name (@guest.Depart.Airline.Name) @guest.Depart.Depart
 					} else {
-						@: TBC
+						@: Other
 					}
 				</p>
 				@Html.DropDownList("DepartID", new SelectList(ViewBag.OutboundFlights, "ID", "Text", guest.DepartID), new { @class = "list" })
